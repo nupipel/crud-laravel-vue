@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
-// use App\Models\Posts;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -13,7 +13,8 @@ class PostController extends Controller
     {
         return view('blog', [
             'page' => 'blog',
-            'post' => Post::all()
+            'post' => Post::all(),
+            'categories' => Category::all()
         ]);
     }
 
@@ -21,7 +22,7 @@ class PostController extends Controller
     {
         return view('singleblog', [
             'page' => 'blog',
-            'post'  => $post
+            'post'  => $post,
         ]);
     }
 }
